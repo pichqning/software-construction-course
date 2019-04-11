@@ -9,8 +9,12 @@ public class Main {
         // observers
         CurrentConditionDisplay currentConditionDisplay = new CurrentConditionDisplay();
         StatisticsDisplay statisticsDisplay = new StatisticsDisplay();
+        AverageHumidityDisplay avgHum = new AverageHumidityDisplay();
+        ForecastDisplay forecastDisplay = new ForecastDisplay();
 
         // connect subject and observers
+        data.registerObserver(forecastDisplay);
+        data.registerObserver(avgHum);
         data.registerObserver(currentConditionDisplay);
         data.registerObserver(statisticsDisplay);
 
